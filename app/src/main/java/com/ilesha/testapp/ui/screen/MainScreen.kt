@@ -52,38 +52,26 @@ fun MainScreenContent(
             .fillMaxSize()
     ) {
         when (uiState) {
-            is MainScreenUiState.Content -> {
-                MainScreenContentContainer(
-                    onNextClicked = onNextClicked,
-                    content = {
-                        when (uiState.currentEntity) {
-                            Entity.Game -> {}
-                            is Entity.Image -> {
-                                EntityImageContent(uiState.currentEntity.url)
-                            }
+            is MainScreenUiState.Content -> MainScreenContentContainer(
+                onNextClicked = onNextClicked,
+                content = {
+                    when (uiState.currentEntity) {
+                        Entity.Game -> {}
+                        is Entity.Image -> EntityImageContent(uiState.currentEntity.url)
 
-                            is Entity.Text -> {
-                                EntityTextContent(uiState.currentEntity.message)
-                            }
+                        is Entity.Text -> EntityTextContent(uiState.currentEntity.message)
 
-                            is Entity.WebView -> {
-                                EntityWebContent(uiState.currentEntity.url)
-                            }
-                        }
+                        is Entity.WebView -> EntityWebContent(uiState.currentEntity.url)
                     }
-                )
-            }
+                }
+            )
 
-            is MainScreenUiState.Error -> {
-                ErrorBox(
-                    message = uiState.message,
-                    onRefreshClicked = onRefreshClicked
-                )
-            }
+            is MainScreenUiState.Error -> ErrorBox(
+                message = uiState.message,
+                onRefreshClicked = onRefreshClicked
+            )
 
-            is MainScreenUiState.Initial, MainScreenUiState.Loading -> {
-                LoadingBox()
-            }
+            is MainScreenUiState.Initial, MainScreenUiState.Loading -> LoadingBox()
         }
     }
 
