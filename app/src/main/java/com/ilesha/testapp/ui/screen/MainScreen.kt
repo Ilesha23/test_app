@@ -20,12 +20,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil3.compose.AsyncImage
+import com.ilesha.testapp.R
 import com.ilesha.testapp.domain.model.Entity
 
 @Composable
@@ -89,7 +91,7 @@ fun MainScreenContentContainer(
     ) {
         content()
         ContentButton(
-            text = "Next",
+            text = stringResource(R.string.main_screen_button_next),
             onClick = onNextClicked,
             modifier = Modifier
                 .align(Alignment.BottomCenter)
@@ -159,7 +161,7 @@ fun LoadingBox() {
         ) {
             CircularProgressIndicator()
             Text(
-                text = "Loading..."
+                text = stringResource(R.string.main_screen_loading)
             )
         }
     }
@@ -183,7 +185,7 @@ fun ErrorBox(
                 .fillMaxWidth(0.8f)
         )
         ContentButton(
-            text = "Retry",
+            text = stringResource(R.string.main_screen_button_retry),
             onClick = onRefreshClicked,
             modifier = Modifier
                 .align(Alignment.BottomCenter)

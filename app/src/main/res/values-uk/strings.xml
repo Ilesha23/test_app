@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Test app</string>
+    <string name="main_screen_button_next">Далі</string>
+    <string name="main_screen_button_retry">Спробувати знову</string>
+    <string name="main_screen_loading">Завантаження…</string>
+</resources>
