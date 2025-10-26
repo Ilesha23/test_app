@@ -83,8 +83,5 @@ class MainScreenViewModel @Inject constructor(
         getCurrentItem()
     }
 
-    fun onRefreshClicked() {
-        getCurrentItem()
-    }
 
 }

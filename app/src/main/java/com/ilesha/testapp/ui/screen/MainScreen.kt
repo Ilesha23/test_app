@@ -38,7 +38,7 @@ fun MainScreen() {
     MainScreenContent(
         uiState = uiState,
         onNextClicked = viewModel::onNextClicked,
-        onRefreshClicked = viewModel::onRefreshClicked
+        onRefreshClicked = viewModel::getCurrentItem
     )
 }
 
