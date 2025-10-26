@@ -2,8 +2,9 @@ package com.ilesha.testapp.domain.usecase
 
 import com.ilesha.testapp.domain.model.Result
 import com.ilesha.testapp.domain.repository.Repository
+import javax.inject.Inject
 
-class GetAllIdsUseCase(
+class GetAllIdsUseCase @Inject constructor(
     private val repository: Repository
 ) {
 

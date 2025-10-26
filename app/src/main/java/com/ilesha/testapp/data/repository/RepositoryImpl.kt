@@ -6,8 +6,9 @@ import com.ilesha.testapp.domain.model.Entity
 import com.ilesha.testapp.domain.model.Result
 import com.ilesha.testapp.domain.repository.Repository
 import okio.IOException
+import javax.inject.Inject
 
-class RepositoryImpl(
+class RepositoryImpl @Inject constructor(
     private val api: ApiInterface
 ) : Repository {
 
